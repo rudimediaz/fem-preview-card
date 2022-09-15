@@ -11,6 +11,7 @@ html {
 
   /* typography */
   --text-base: 14px;
+  --text-large: 32px;
 }
 
 *,
@@ -82,8 +83,8 @@ button:focus {
 }
 
 .container > * {
-  width: 90%;
-  height: 90%;
+  width: 92%;
+  height: 92%;
 }
 
 .card {
@@ -100,7 +101,7 @@ button:focus {
 
 .product-image {
   background-color: var(--primary-dark);
-  padding-block: 130px;
+  padding-block: 120px;
   background-image: url(/images/image-product-mobile.jpg);
   background-size: cover;
   background-position-x: center;
@@ -109,7 +110,7 @@ button:focus {
 .product-detail {
   display: flex;
   flex-direction: column;
-  padding-inline: 1.5rem;
+  padding: 1rem 1.5rem;
   justify-content: space-evenly;
   color: var(--accent-dark);
 }
@@ -117,12 +118,13 @@ button:focus {
 .product-detail > h1 {
   letter-spacing: 0.4rem;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .product-detail > h2 {
-  font-size: 30px;
+  font-size: var(--text-large);
   color: var(--accent-darker);
+  line-height: 1;
 }
 
 .product-detail > p {
@@ -133,13 +135,15 @@ button:focus {
   padding-top: 1rem;
 }
 
-.product-detail > button {
+.product-button {
   display: inline-flex;
   justify-content: center;
-  padding-block: 0.5rem;
+  padding-block: 1rem;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
   gap: 1ch;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .product-price {
@@ -149,7 +153,7 @@ button:focus {
 }
 
 .product-price > span {
-  font-size: 30px;
+  font-size: var(--text-large);
   font-weight: 700;
   color: var(--primary-dark);
 }
@@ -159,9 +163,13 @@ button:focus {
   font-size: 13px;
 }
 
+.product-button > img {
+  height: 100%;
+}
+
 @media (min-width: 640px) {
   .container > * {
-    width: 45%;
+    width: 43%;
     height: unset;
   }
 
@@ -170,11 +178,15 @@ button:focus {
   }
 
   .card > * {
-    flex: 1;
+    flex: 1 1 50%;
+  }
+
+  .product-detail {
+    padding-inline: 2.5rem;
   }
 
   .product-image {
-    padding-block: 250px;
+    padding-block: 230px;
     background-image: url(/images/image-product-desktop.jpg);
   }
 }
