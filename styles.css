@@ -4,6 +4,7 @@ html {
 
 :root {
   --primary-dark: hsl(158 36% 37%);
+  --primary-darker: hsl(157 48% 18%);
   --primary-light: hsl(30 38% 92%);
   /* accent  */
   --accent-darker: hsl(212 21% 14%);
@@ -45,7 +46,12 @@ button {
 }
 
 button:focus {
-  outline: none;
+  outline: 1pt solid var(--primary-darker);
+  outline-offset: 0;
+}
+
+button:active {
+  background-color: initial;
 }
 
 .button_primary {
@@ -55,7 +61,7 @@ button:focus {
 }
 
 .button_primary:hover {
-  background-color: var(--accent-darker);
+  background-color: var(--primary-darker);
 }
 
 .font-sans {
