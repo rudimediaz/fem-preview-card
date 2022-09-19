@@ -101,6 +101,17 @@ button:active {
   flex-direction: column;
 }
 
+.card > picture {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > picture > img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
 .card__body {
   flex: 1;
 }
