@@ -45,23 +45,20 @@ Users should be able to:
 
 ### What I learned
 
-#### How to handle image as background images, swipe it up for different viewport screens, and give them the correct sizing.
+#### Swapping image when viewport size is changed.
 
-```css
-.product-image {
-  background-color: var(--primary-dark);
-  padding-block: 120px;
-  background-image: url(/images/image-product-mobile.jpg);
-  background-size: cover;
-  background-position-x: center;
-}
-
-@media (min-width: 640px) {
-  .product-image {
-    padding-block: 230px;
-    background-image: url(/images/image-product-desktop.jpg);
-  }
-}
+```html
+<picture>
+  <source
+    media="(min-width : 640px)"
+    srcset="/images/image-product-desktop.jpg"
+  />
+  <source
+    media="(min-width : 375px)"
+    srcset="/images/image-product-mobile.jpg"
+  />
+  <img src="/images/image-product-mobile.jpg" alt="perfume" />
+</picture>
 ```
 
 Take a look at snippet above. Instead of using _height_ property to determine content height, I use _padding-block_ property because of nature of responsive design.
